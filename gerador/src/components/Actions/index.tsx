@@ -1,6 +1,30 @@
 import React from 'react';
 import { View , Text , StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { useNavigation } from '@react-navigation/native';
+import Boleto from '../Boletos/Boleto';
+import Carteira from '../Carteiras/Carteira';
+import Compras from '../Compras/Compras';
+import Entradas from '../Entradas/Entradas.1';
+
+const Stack = createStackNavigator();
+
+const App = () => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="TelaPrincipal">
+        <Stack.Screen name= "Entradas" component={Entradas} />
+        <Stack.Screen name= "Compras" component={Compras} />
+        <Stack.Screen name= "Carteira" component={Carteira} />
+        <Stack.Screen name= "Boleto" component={Boleto} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+  };
+
+
 
 
 export default function Actions() {
@@ -76,3 +100,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   }
 })
+
+const TelaPrincipal = () => {
+  const navigation = useNavigation();
+
+  return (
+    <View  />
+    
+  );
+};
+

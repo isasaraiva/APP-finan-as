@@ -1,8 +1,7 @@
 import React from "react";
-
+import 'react-native-gesture-handler';
 import {
   TouchableOpacity,
-  View,
   StyleSheet,
   Text,
   StatusBar,
@@ -10,6 +9,9 @@ import {
 import { Feather } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import { MotiView } from "moti";
+
+
+
 
 const statusbarHeight = StatusBar.currentHeight
   ? StatusBar.currentHeight + 22

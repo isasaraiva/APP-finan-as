@@ -6,7 +6,12 @@ import Balance from './src/components/Balance';
 import Moviments from './src/components/Moviments';
 import Actions from './src/components/Actions';
 import 'react-native-reanimated';
-
+import {  } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import Boleto from './src/components/Boletos/Boleto';
+import Carteira from './src/components/Carteiras/Carteira';
+import Compras from './src/components/Compras/Compras';
+import Entradas from './src/components/Entradas/Entradas.1';
 
 const list =[
   {
@@ -26,19 +31,24 @@ const list =[
   {
     id:3,
     label: 'Salario',
-    value: '8.300,00',
+    value: '18.300,00',
     date: '17/09/2023',
     type: 1 //receita entrada
   }
 ]
 
+const Drawer = createDrawerNavigator();
+
 export default function App() {
   return (
+    <>
+        
     <View style={styles.container}>
       <Header name= "Bel"/>
       
       <Balance saldo="9.245,00" gastos="-527,00"/>
       <Actions/>
+      
       <Text style={styles.title}>Ultimas Movimentações</Text>
 
       <FlatList 
@@ -51,8 +61,15 @@ export default function App() {
       
       <StatusBar style="auto"  />
     </View>
+
+     
+   
+    </>
   );
 }
+
+
+
 
 const styles = StyleSheet.create({
   container: {
@@ -70,3 +87,4 @@ const styles = StyleSheet.create({
   }
  
 });
+

@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { MotiView } from "moti/build";
 
+
 interface SaldoEgastosProps {
   saldo: string;
   gastos: string;
